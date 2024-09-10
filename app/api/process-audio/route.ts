@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
             },
             {
               role: "user",
-              content: `Summarize the following lecture transcript into markdown format notes:\n\n${transcription}`,
+              content: `Based on the following transcription, generate concise and well-structured notes. Focus on key points, important details, and main ideas. Use clear language and organize the information in a logical manner:\n\n${transcription}`,
             },
           ],
         }),
