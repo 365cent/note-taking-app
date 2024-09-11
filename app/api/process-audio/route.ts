@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 const CLOUDFLARE_ACCOUNT_ID = "8c9f126e8236df7c3ecfb44264c18351";
 const CLOUDFLARE_API_TOKEN = "DNq3iGE2t983Vd2qGhQLuC0XhOyiE8QFuZtOVeGe";
 
+export const runtime = 'edge';
+
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const audio = formData.get("audio") as Blob;
