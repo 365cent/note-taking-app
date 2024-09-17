@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   try {
     // Step 1: Transcribe audio using Whisper API
     const whisperResponse = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/openai/whisper`,
+      `https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_ACCOUNT_ID}/ai/workers-ai/@cf/openai/whisper`,
       {
         method: "POST",
         headers: {
@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     // Step 2: Generate notes using Llama API
     const llamaResponse = await fetch(
-      `https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/ai/run/@cf/meta/llama-3-8b-instruct`,
+      `https://gateway.ai.cloudflare.com/v1/${CLOUDFLARE_ACCOUNT_ID}/ai/workers-ai/@cf/meta/llama-3.1-8b-instruct`,
       {
         method: "POST",
         headers: {
